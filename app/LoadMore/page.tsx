@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Banner from "../public/image/about-bannerimage.jpg";
 import Username from "../public/image/user-1.jpg";
 import user3 from "../public/image/carosel-3.jpg";
@@ -15,10 +15,6 @@ import {
   ChevronRight,
 } from "lucide-react";
 import Username1 from "../public/image/standard_post_img02.jpg";
-import Username2 from "../public/image/standard_post_img03.jpg";
-import Username3 from "../public/image/service-image3.jpg";
-
-const images = [Username1, Username2, Username3];
 
 export default function FourColumn() {
   useEffect(() => {
@@ -28,24 +24,7 @@ export default function FourColumn() {
     });
   }, []);
 
-  const testimonials = [
-    {
-      image: "/image/carosel-1.jpg",
-      name: "Kevin Andrew",
-      review:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur...",
-      rating: 5,
-      role: "Happy Customer",
-    },
-    {
-      image: "/image/carosel-1.jpg",
-      name: "Alina James",
-      review:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur...",
-      rating: 5,
-      role: "Happy Customer",
-    },
-  ];
+  
 
   return (
     <div>
