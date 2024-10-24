@@ -28,7 +28,6 @@ export default function FourColumn() {
     });
   }, []);
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const testimonials = [
     {
       image: "/image/carosel-1.jpg",
@@ -47,18 +46,6 @@ export default function FourColumn() {
       role: "Happy Customer",
     },
   ];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-    );
-  };
 
   return (
     <div>
@@ -143,7 +130,7 @@ export default function FourColumn() {
           <div className="relative bg-[#212529] overflow-hidden shadow-lg mt-10">
             <div className="relative h-48">
               <Image
-                src={images[currentImageIndex]} // Use current image
+                src={Username1} // You can replace this with an appropriate image
                 alt="Profile picture"
                 layout="fill"
                 objectFit="cover"
@@ -174,18 +161,12 @@ export default function FourColumn() {
               </div>
             </div>
             <div className="absolute top-1/2 transform -translate-y-1/2 left-4">
-              <button
-                onClick={handlePrevImage}
-                className="text-white p-2 rounded-full mb-[350px] mr-[100px]"
-              >
+              <button className="text-white p-2 rounded-full mb-[350px] mr-[100px]">
                 <ChevronLeft className="h-10 w-10" />
               </button>
             </div>
             <div className="absolute top-1/2 transform -translate-y-1/2 right-4">
-              <button
-                onClick={handleNextImage}
-                className="text-white p-2 rounded-full mb-[350px]"
-              >
+              <button className="text-white p-2 rounded-full mb-[350px]">
                 <ChevronRight className="h-10 w-10" />
               </button>
             </div>
