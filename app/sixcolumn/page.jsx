@@ -4,11 +4,7 @@ import { useState } from "react";
 import Banner from "../public/image/about-bannerimage.jpg";
 import Username from "../public/image/user-1.jpg";
 import Testimonials from "../components/Testimonials";
-import user3 from "../public/image/standard_post_img02.jpg";
-import user4 from "../public/image/standard_post_img03.jpg";
 import user5 from "../public/image/standard_post_img05.jpg";
-import user6 from "../public/image/standard_post_img06.jpg";
-import lightimage from "../public/image/top-lightimage.png";
 import {
   CalendarDays,
   User,
