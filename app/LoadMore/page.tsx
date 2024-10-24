@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react"; // Thêm useState vào import
 import Banner from "../public/image/about-bannerimage.jpg";
 import Username from "../public/image/user-1.jpg";
 import user3 from "../public/image/carosel-3.jpg";
@@ -17,6 +17,10 @@ import {
 import Username1 from "../public/image/standard_post_img02.jpg";
 
 export default function FourColumn() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0); // Khai báo currentImageIndex
+  const [currentIndex, setCurrentIndex] = useState(0); // Khai báo currentIndex
+  const images = [Banner, Username, user3, Username1]; // Mảng hình ảnh để sử dụng
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -24,7 +28,13 @@ export default function FourColumn() {
     });
   }, []);
 
-  
+  const handlePrev = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+  };
 
   return (
     <div>
@@ -58,8 +68,18 @@ export default function FourColumn() {
               >
                 <div className="banner_wrapper">
                   <figure className="sub-bannerimage mb-0">
-                    <Image src={Banner} alt="" className="img-fluid w-full h-auto" />
+                    <Image src={images[currentImageIndex]} alt="" className="img-fluid w-full h-auto" />
                   </figure>
+                </div>
+                <div className="absolute top-1/2 transform -translate-y-1/2 left-4">
+                  <button className="text-white p-2 rounded-full mb-[350px]" onClick={handlePrev}>
+                    <ChevronLeft className="h-10 w-10" />
+                  </button>
+                </div>
+                <div className="absolute top-1/2 transform -translate-y-1/2 right-4">
+                  <button className="text-white p-2 rounded-full mb-[350px]" onClick={handleNext}>
+                    <ChevronRight className="h-10 w-10" />
+                  </button>
                 </div>
               </div>
             </div>
@@ -138,16 +158,6 @@ export default function FourColumn() {
                   Read More
                 </button>
               </div>
-            </div>
-            <div className="absolute top-1/2 transform -translate-y-1/2 left-4">
-              <button className="text-white p-2 rounded-full mb-[350px] mr-[100px]">
-                <ChevronLeft className="h-10 w-10" />
-              </button>
-            </div>
-            <div className="absolute top-1/2 transform -translate-y-1/2 right-4">
-              <button className="text-white p-2 rounded-full mb-[350px]">
-                <ChevronRight className="h-10 w-10" />
-              </button>
             </div>
           </div>
 
