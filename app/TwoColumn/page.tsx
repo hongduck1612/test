@@ -1,40 +1,33 @@
-"use client"
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React from "react";
 import about from "../public/image/about-bannerimage.jpg";
 import Username from "../public/image/post-featured.jpg";
 import user3 from "../public/image/post-featured2.jpg";
 import user4 from "../public/image/post-featured3.jpg";
 import user5 from "../public/image/post-featured4.jpg";
 import { CalendarDays, Tag, User } from "lucide-react";
-import Testimonials from "../components/Testimonials";
-import Aos from 'aos';
-import 'aos/dist/aos.css';
 
 const TwoColumn = ()=>{
-    useEffect(() => {
-        Aos.init({ duration: 2000 });
-    }, []);
     return(
         <div>
-            <div className="relative bg-dark lg:py-24 custom-mobile:py-[20px] " style={{ paddingLeft: "5px" }}>
-            <div className="container mx-auto lg:flex lg:items-center lg:flex-row custom-mobile:flex  custom-mobile:flex-col-reverse lg:justify-between px-4">
+            <div className="relative bg-dark py-24" style={{ paddingLeft: "20px" }}>
+            <div className="container mx-auto flex items-center justify-between px-4">
             {/* Phần văn bản bên trái */}
-                <div className="lg:w-1/2 lg:text-left custom-mobile:text-center z-10 lg:pl-[100px] custom-mobile:px-0" data-aos="fade-left">
-                    <h1 className="lg:text-[76px] custom-mobile:text-[24px] lg:leading-[80px] custom-mobile:leading-[34px] font-semibold lg:pt-0 custom-mobile:pt-6 text-white lg:mb-6">Two  Column</h1>
-                    <p className="lg:text-xl custom-mobile:text-[14px]  text-gray-300 mb-8 lg:pt-0 custom-mobile:pt-1 ">
-                        Nuis aute irure dolor in reprehenderit in voluptate <br />
+                <div className="w-full lg:w-1/2 text-left z-10" style={{ paddingLeft: "100px" }} data-aos="fade-left">
+                    <h1 className="text-[76px] leading-[80px] font-semibold text-white mb-6">Two <br /> Column</h1>
+                    <p className="text-xl text-gray-300 mb-8">
+                        Nuis aute irure dolor in reprehenderit in voluptate velit esse fugiat nulla pariatur. <br />
                         esse fugiat nulla pariatur.
                     </p>
                         {/* Điều hướng Breadcrumb */}
-                    <div className="flex w-fit space-x-2 p-[12px]  lg:ml-0 custom-mobile:ml-[95px]  bg-[#222224]">
-                        <a href="#" className="text-white lg:text-[18px] custom-mobile:text-[14px] font-medium leading-[24px]"> Home</a>
-                        <span className="text-gray-400 lg:text-[18px] custom-mobile:text-[14px]  font-medium leading-[24px]">-</span>
-                        <span className="text-[#E1B261] lg:text-[18px] custom-mobile:text-[14px]  font-medium leading-[24px]">Two Column</span>
+                    <div className="flex w-fit space-x-2 p-[12px] bg-[#222224]">
+                        <a href="#" className="text-white text-[18px] font-medium leading-[24px]"> Home</a>
+                        <span className="text-gray-400 text-[18px] font-medium leading-[24px]">-</span>
+                        <span className="text-[#E1B261] text-[18px] font-medium leading-[24px]">Two Column</span>
                     </div>
                 </div>
                 {/* Phần hình ảnh bên phải */}
-                <div className="w-full lg:w-[48%] z-10 lg:ml-[-3%]  " data-aos="fade-up">
+                <div className="w-full lg:w-[48%] z-10 lg:ml-[-3%]" data-aos="fade-up">
                     <Image src={about}width={743}height={428}alt="about"priority={true} />
                 </div>
             </div>
@@ -284,8 +277,7 @@ const TwoColumn = ()=>{
                 </div>
                 </div>
             </section>
-                <Testimonials/>
-        </div>
+       </div>
     );
 }
 export default TwoColumn

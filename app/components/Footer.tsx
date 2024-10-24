@@ -6,18 +6,18 @@ import { ArrowUpRight, CircleCheck, MailPlus, MapPinned, Send, Smartphone, Faceb
 
 const Footer = () => {
     return (
-        <footer className="lg:pt-28 custom-mobile:pt-[35px] overflow-hidden">
+        <footer className="md:pt-28 custom-mobile:pt-[35px] overflow-hidden">
             <section className="bg-cover bg-no-repeat pt-10">
                     <div className="flex flex-wrap justify-between">
                         {/* Logo and Call to Action */}
                         <div className="w-full lg:w-1/3 md:w-1/2 px-4 mb-8">
-                            <div className="flex flex-col lg:items-center custom-mobile:items-center">
+                            <div className="flex flex-col md:items-start custom-mobile:items-center">
                                 <a>
-                                    <figure className="mb-10 custom-mobile:mx-auto">
-                                        <Image src={logofooter} className="lg:w-[160px] md:h-auto custom-mobile:mb-[25px] custom-mobile:w-[135px] custom-mobile:h-auto" alt=""/>
+                                    <figure className="mb-4 custom-mobile:mx-auto">
+                                        <Image src={logofooter} className="md:pb-12 md:w-[160px] md:h-auto custom-mobile:mb-[25px] custom-mobile:w-[135px] custom-mobile:h-auto" alt=""/>
                                     </figure>
                                 </a>
-                                <p className="text-white md:text-2xl md:font-semibold md:pb-6 custom-mobile:text-[16px] custom-mobile:leading-[28px] custom-mobile:mb-[20px] custom-mobile:text-center lg:indent-[135px] lg:w-fit">Want to Create Something Great Together?</p>
+                                <p className="text-white md:text-2xl md:font-semibold md:pb-6 custom-mobile:text-[16px] custom-mobile:leading-[28px] custom-mobile:mb-[20px] custom-mobile:text-center">Want to Create Something Great Together?</p>
                                 <div className="flex space-x-4">
                                     <div className='flex items-center gap-5 group cursor-pointer md:text-[20px] custom-mobile:text-[14px]'>
                                         <a className='group-hover:text-[#E1B261] transition-all duration-300 ' href="#">Get Started</a>
@@ -29,7 +29,7 @@ const Footer = () => {
                         {/* Contact Info */}
                         <div className="w-full lg:w-1/3 md:w-1/2 px-4 mb-8">
                             <div>
-                                <h4 className="text-white text-2xl font-semibold mb-4 lg:text-start custom-mobile:text-center custom-mobile:text-[16px]">Contact Info:</h4>
+                                <h4 className="text-white text-2xl font-semibold mb-4 custom-mobile:text-center custom-mobile:text-[16px]">Contact Info:</h4>
                                 <div className="flex items-start mb-4">
                                     <figure className="mr-4 hover:-translate-y-2 transition-all duration-900">
                                         <div className='pt-[5px]'>
@@ -66,7 +66,7 @@ const Footer = () => {
                             </div>
                         </div>
                         {/* Newsletter and Social Media */}
-                        <div className="w-full lg:w-1/3 hidden lg:block px-4 mb-8 lg:ml-[-220px]">
+                        <div className="w-full lg:w-1/3 md:w-1/3 hidden md:block px-4 mb-8">
                             <div>
                                 <h4 className="text-white text-[23px] font-semibold mb-4">Subscribe to Our Newsletter:</h4>
                                 <form method="POST" className="flex">
@@ -97,7 +97,7 @@ const Footer = () => {
                                 </div>
                             </div>
                         </div>
-                        <figure className="lg:absolute lg:right-0 lg:block bottom-[49px] custom-mobile:hidden">
+                        <figure className="md:absolute md:right-0 md:block custom-mobile:hidden">
                             <Image src={footerRight} alt="footerRight" width={165} height={297} />
                         </figure>
                     </div>

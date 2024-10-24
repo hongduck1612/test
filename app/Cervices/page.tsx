@@ -17,8 +17,6 @@ import arrowImage from "../public/image/arrow.png";
 import workImage from "../public/image/work-image.jpg";
 import about from "../public/image/about-bannerimage.jpg";
 import serviceBackground from "../public/image/service-background.jpg"; 
-import Journey from "../components/Journey";
-import Blog from "../components/Blog";
 
 
 const Cervices = () => {
@@ -119,6 +117,9 @@ const Cervices = () => {
     </div>
   </div>
 </section>
+
+
+
       <section className="work-section relative pb-40   ">
         <figure className="light-image absolute top-0 left-[130px] z-0">
           <Image src={lightimage} alt="light" width={100} height={150} />
@@ -188,8 +189,7 @@ const Cervices = () => {
           </div>
         </div>
       </section>
-      <Journey/>
-      <Blog/>
+      
     </div>
   );
 };

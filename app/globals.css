@@ -54,37 +54,6 @@ body {
   }
 }
 
-@media (min-width: 375px) {
-  .overlayImage {
-    background-image: url('./public/image/journey-backgroundimage.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.5; 
-    width: 100%;
-    height: 50%;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    z-index: 2;
-  }
-}
-
-@media (min-width: 375px) {
-  .journey-section {
-  background-image: url('./public/image/service-background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 50%;
-  position: absolute;
-  top: 70px;
-  left: 0;
-  z-index: 0;
-  }
-}
-
 .service-section {
   background: url('../app/public/image/service-background.jpg');
   background-repeat: no-repeat;
@@ -112,95 +81,75 @@ body {
   background-position: center;
 }
 
-
-@media (min-width:1024px) {
-  .journey-section {
-    background-image: url('./public/image/service-background.jpg'); /* Ảnh chính */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-  }
-}
-
-@media (min-width:1024px) {
-  .overlayImage {
-    background-image: url('./public/image/journey-backgroundimage.jpg'); /* Ảnh phụ */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.5; /* Điều chỉnh độ trong suốt của lớp ảnh phụ */
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-  }
-}
-
-.swiper-pagination-bullet {
-  width: 20px;
-  height: 20px;
-  background-color: gray;
-  border-radius: 50%;
-  opacity: 0.5;
-  transition: opacity 0.3s, transform 0.3s;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: #E1B261; 
-  opacity: 1;
-  transform: scale(1.2); 
-}
-
-.swiper-pagination-bullet:hover {
-  opacity: 0.8;
-  transform: scale(1.1);
-}
-
-.border-top-50::before {
-  content: '';
+.journey-section {
+  background-image: url('./public/image/service-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
-  left: 8px;
-  width: 40%;
-  height: 2px;
-  background-color: transparent;
-  transition: background-color 0.3s;
+  left: 0;
+  z-index: 0;
 }
 
-.border-top-50:hover::before {
-  background-color: #E1B261;
-}
-
-/* CSS cho third-swiper-pagination */
-.third-swiper-pagination {
+.overlayImage {
+  background-image: url('./public/image/journey-backgroundimage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
   position: absolute;
-  top: 650px;
-  bottom: 20px;
-  right: 650px;
-  display: flex;
-  flex-direction: row; /* Đặt các bullet theo chiều dọc */
-  gap: 8px;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
 
-.third-swiper-pagination .swiper-pagination-bullet {
-  width: 20px;
-  height: 20px;
-  background-color: #999999;
-  border-radius: 50%;
-  opacity: 0.6;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
+/* Responsive for smaller screens */
+@media (max-width: 375px) {
+  body {
+    background-size: cover;
+  }
 
-.third-swiper-pagination .swiper-pagination-bullet-active {
-  background: #E1B261 ; /* Màu cho bullet đang hoạt động */
-  transform: scale(1.3); /* Phóng to bullet khi active */
-  opacity: 1;
+  .service-section,
+  .about-section,
+  .process-section,
+  .recentwork-section {
+    background-size: contain;
+    padding: 0 20px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .py-24 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .text-md {
+    font-size: 0.875rem;
+  }
+
+  .flex-col {
+    flex-direction: column;
+  }
+
+  .swiper-pagination-bullet-active {
+    transform: scale(1.1);
+  }
 }

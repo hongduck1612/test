@@ -32,88 +32,89 @@ const About = () => {
     <div>
       {/* Phần đầu tiên */}
       <div className="relative bg-dark py-24" style={{ paddingLeft: "20px" }}>
-        <div className="container mx-auto flex items-center justify-between px-4">
-          {/* Phần văn bản bên trái */}
-          <div
-            className="w-full lg:w-1/2 text-left z-10"
-            style={{ paddingLeft: "100px" }}
-            data-aos="fade-left" // Animation cho văn bản
-          >
-            <h1 className="text-[76px] leading-[80px] font-semibold text-white mb-6">Infinite Scroll</h1>
-            <p className="text-xl text-gray-300 mb-8">
-              Nuis aute irure dolor in reprehenderit in voluptate velit esse fugiat nulla pariatur. <br />
-              velit esse fugiat nulla pariatur.
-            </p>
-            {/* Điều hướng Breadcrumb */}
-            <div className="flex w-fit space-x-2 p-[12px] bg-[#222224]">
-              <a href="#" className="text-white text-[18px] font-medium leading-[24px]"> Home</a>
-              <span className="text-gray-400 text-[18px] font-medium leading-[24px]">-</span>
-              <span className="text-[#E1B261] text-[18px] font-medium leading-[24px]"> Infinite Scroll</span>
-            </div>
+  <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-4">
+    {/* Phần văn bản bên trái */}
+    <div
+      className="w-full lg:w-1/2 text-left z-10"
+      style={{ paddingLeft: "200px" }}
+      data-aos="fade-left"
+    >
+      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Infinite Scroll</h1>
+      <p className="text-lg sm:text-xl text-gray-300 mb-6">
+        Nuis aute irure dolor in reprehenderit in voluptate velit esse fugiat nulla pariatur. <br />
+        velit esse fugiat nulla pariatur.
+      </p>
+      <div className="flex space-x-2 mb-6">
+        <a href="#" className="text-white"> Home</a>
+        <span className="text-gray-400">-</span>
+        <span className="text-[#E1B261]"> Infinite Scroll</span>
+      </div>
+    </div>
+    {/* Phần hình ảnh bên phải */}
+    <div className="w-full lg:w-[48%] z-10 lg:ml-[-3%] mt-8 lg:mt-0" data-aos="fade-up">
+      <Image
+        src={about}
+        width={743}
+        height={428}
+        alt="about"
+        priority={true}
+        className="w-full h-auto"
+      />
+    </div>
+  </div>
+</div>
+
+{/* Phần bài viết Blog */}
+<section className="mx-auto service-section px-4 md:px-20 lg:px-40 pb-10">
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+    {/* Các thành phần Card */}
+    {[
+      blogImage1,
+      blogImage2,
+      blogImage3,
+      blogImage4,
+      blogImage5,
+      blogImage6,
+    ].map((blogImage, index) => (
+      <div className="bg-[#212529] overflow-hidden shadow-lg mt-10" key={index}>
+        <div className="relative h-48 sm:h-60 lg:h-48">
+          <Image
+            src={blogImage}
+            alt={`Blog image ${index + 1}`}
+            layout="fill"
+            objectFit="cover"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="px-4 sm:px-6 py-4">
+          <div className="flex items-center mb-2 gap-2">
+            <User className="h-4 w-4 text-yellow-500 mr-2" />
+            <span className="text-sm text-white">By : Admin</span>
+            <Tag className="h-4 w-4 text-yellow-500 ml-2" />
+            <div className="text-white text-sm">Virtual Assistant</div>
           </div>
-          {/* Phần hình ảnh bên phải */}
-          <div className="w-full lg:w-[48%] z-10 lg:ml-[-3%]" data-aos="fade-up">
-            <Image
-              src={about}
-              width={743}
-              height={428}
-              alt="about"
-              priority={true} // Đảm bảo hình ảnh được ưu tiên tải
-            />
+          <p className="text-gray-400 text-base">
+            Curabitur pulvinar euismod ante, ac sagittis ante posuere ac.
+            Vivamus luctus commodo dolor porta feugiat.
+          </p>
+        </div>
+        <hr />
+        <div className="pt-2">
+          <div className="flex items-center justify-between mb-4 mt-8">
+            <div className="flex items-center">
+              <CalendarDays className="h-4 w-4 text-yellow-500 ml-4" />
+              <span className="text-md text-white ml-1"> Dec 20, 2022</span>
+            </div>
+            <button className="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-3 rounded-l-full">
+              Read More
+            </button>
           </div>
         </div>
       </div>
+    ))}
+  </div>
+</section>
 
-      {/* Phần bài viết Blog */}
-      <section className="mx-auto service-section px-4 md:px-40 pb-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-          {/* Các thành phần Card */}
-          {[
-            blogImage1,
-            blogImage2,
-            blogImage3,
-            blogImage4,
-            blogImage5,
-            blogImage6,
-          ].map((blogImage, index) => (
-            <div className="bg-[#212529] overflow-hidden shadow-lg mt-10" key={index}>
-              <div className="relative h-48">
-                <Image
-                  src={blogImage} // Sử dụng hình ảnh cho Card tương ứng
-                  alt={`Blog image ${index + 1}`}
-                  layout="fill"
-                  objectFit="cover"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="px-6 py-4">
-                <div className="flex items-center mb-2 gap-2">
-                  <User className="h-4 w-4 text-yellow-500 mr-2" />
-                  <span className="text-sm text-white">By : Admin</span>
-                  <Tag className="h-4 w-4 text-yellow-500 ml-2" />
-                  <div className="text-white text-sm">Virtual Assistant</div>
-                </div>
-                <p className="text-gray-400 text-base">
-                  Curabitur pulvinar euismod ante, ac sagittis ante posuere ac.
-                  Vivamus luctus commodo dolor porta feugiat.
-                </p>
-              </div>
-              <hr />
-              <div className="pt-2">
-                <div className="flex items-center justify-between mb-4 mt-8">
-                  <div className="flex items-center">
-                    <CalendarDays className="h-4 w-4 text-yellow-500 ml-4" />
-                    <span className="text-md text-white ml-1"> Dec 20, 2022</span>
-                  </div>
-                  <button className="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-3 rounded-l-full">
-                    Read More
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
       {/* Start Testimonials-section */}
       <div className="testimonials-section pt-[142px] pb-[140px] overflow-hidden">
         <div className="relative">

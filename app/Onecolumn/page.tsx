@@ -9,7 +9,7 @@ import Testimonials from "../components/Testimonials";
 import user5 from "../public/image/blog-image3.jpg";
 import user6 from "../public/image/blog-image3.jpg";
 import lightimage from "../public/image/top-lightimage.png";
-import blog1 from "../public/image/post-featured3.jpg";
+import blog1 from "../public/image/post-featured3 (1).jpg";
 import blog2 from "../public/image/post-featured2.jpg";
 import blog3 from "../public/image/post-featured4.jpg";
 import AOS from 'aos';
