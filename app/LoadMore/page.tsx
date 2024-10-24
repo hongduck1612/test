@@ -7,7 +7,6 @@ import user3 from "../public/image/carosel-3.jpg";
 import Testimonials from "../components/Testimonials";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
 import {
   CalendarDays,
   User,
@@ -30,20 +29,6 @@ export default function FourColumn() {
   }, []);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handlePrevImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
-
-  const handleNextImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
   const testimonials = [
     {
       image: "/image/carosel-1.jpg",
@@ -62,6 +47,8 @@ export default function FourColumn() {
       role: "Happy Customer",
     },
   ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
